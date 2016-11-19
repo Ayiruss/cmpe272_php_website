@@ -1,40 +1,68 @@
-<?php
-session_start(); 
-?>
-<!doctype html>
-<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
   <head>
-    <title>Login with Facebook</title>
-<link href="http://www.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"> 
- </head>
-  <body>
-  <?php if ($_SESSION['FBID']): ?>      <!--  After user login  -->
-<div class="container">
-<div class="hero-unit">
-  <h1>Hello <?php echo $_SESSION['USERNAME']; ?></h1>
-  <p>Welcome to "facebook login" tutorial</p>
-  </div>
-<div class="span4">
- <ul class="nav nav-list">
-<li class="nav-header">Image</li>
-	<li><img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture"></li>
-<li class="nav-header">Facebook ID</li>
-<li><?php echo  $_SESSION['FBID']; ?></li>
-<li class="nav-header">Facebook fullname</li>
-<li><?php echo $_SESSION['FULLNAME']; ?></li>
-<li class="nav-header">Facebook Email</li>
-<li><?php echo $_SESSION['EMAIL']; ?></li>
-<div><a href="logout.php">Logout</a></div>
-</ul></div></div>
-    <?php else: ?>     <!-- Before login --> 
-<div class="container">
-<h1>Login with Facebook</h1>
-           Not Connected
-<div>
-      <a href="fbconfig.php">Login with Facebook</a></div>
-	 <div> <a href="http://www.krizna.com/general/login-with-facebook-using-php/"  title="Login with facebook">View Post</a>
-	  </div>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>AngularJS Authentication App</title>
+          <!-- Bootstrap -->
+          <link href="css/bootstrap.min.css" rel="stylesheet">
+          <link href="http://www.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"> 
+            <link href="css/custom.css" rel="stylesheet">
+              <link href="css/toaster.css" rel="stylesheet">
+                <style>
+                  a {
+                  color: orange;
+                  }
+                </style>
+                <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                <!--[if lt IE 9]><link href= "css/bootstrap-theme.css"rel= "stylesheet" >
+
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+              </head>
+
+  <body ng-cloak="">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header col-md-8">
+            <button type="button" class="navbar-toggle" toggle="collapse" target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" rel="home" title="AngularJS Authentication App">AngularJS Authentication App</a>
+          </div>
+          <div class="navbar-header col-md-2">
+            <a class="navbar-brand" rel="home" title="AngularJS Authentication Tutorial" href="http://www.angularcode.com/user-authentication-using-angularjs-php-mysql">Tutorial</a>
+          </div>
+           <div class="navbar-header col-md-2">
+            <a class="navbar-brand" rel="home" title="Download" href="https://app.box.com/s/1uvn9xo9nbi4xxm9g9dx">Download</a>
+          </div>
+        </div>
       </div>
-    <?php endif ?>
-  </body>
+    </div>
+    <div >
+      <div class="container" style="margin-top:20px;">
+
+        <div data-ng-view="" id="ng-view" class="slide-animation"></div>
+
+      </div>
+    </body>
+  <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+  <!-- Libs -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
+  <script src="js/angular-animate.min.js" ></script>
+  <script src="js/toaster.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/data.js"></script>
+  <script src="app/directives.js"></script>
+  <script src="app/authCtrl.js"></script>
 </html>
+
