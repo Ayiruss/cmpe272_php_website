@@ -8,9 +8,10 @@
           <title>AngularJS Authentication App</title>
           <!-- Bootstrap -->
           <link href="css/bootstrap.min.css" rel="stylesheet">
-          <link href="http://www.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"> 
+          <link href="http://www.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
             <link href="css/custom.css" rel="stylesheet">
               <link href="css/toaster.css" rel="stylesheet">
+              <link href="css/bootstrap-social.css" rel="stylesheet">
                 <style>
                   a {
                   color: orange;
@@ -65,4 +66,3 @@
   <script src="app/directives.js"></script>
   <script src="app/authCtrl.js"></script>
 </html>
-

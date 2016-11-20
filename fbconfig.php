@@ -14,7 +14,7 @@ use Facebook\Entities\AccessToken;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
-FacebookSession::setDefaultApplication( 'Your APP ID','Your APP Secret' );
+FacebookSession::setDefaultApplication( '642963862396213','8563798aasdasdasdweqwe84'  );
 // login helper with redirect_uri
     $helper = new FacebookRedirectLoginHelper('http://demos.krizna.com/1353/fbconfig.php' );
 try {
@@ -35,7 +35,7 @@ if ( isset( $session ) ) {
  	    $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
 	    $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
 	/* ---- Session Variables -----*/
-	    $_SESSION['FBID'] = $fbid;           
+	    $_SESSION['FBID'] = $fbid;
         $_SESSION['FULLNAME'] = $fbfullname;
 	    $_SESSION['EMAIL'] =  $femail;
     /* ---- header location after session ----*/
