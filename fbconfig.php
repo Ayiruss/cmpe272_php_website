@@ -14,7 +14,7 @@ use Facebook\Entities\AccessToken;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
-FacebookSession::setDefaultApplication( '642963862396213','8563798aasdasdasdweqwe84'  );
+FacebookSession::setDefaultApplication( '1609503589344905','8a6bc041338ad92f0a24819c7109e219'  );
 // login helper with redirect_uri
     $helper = new FacebookRedirectLoginHelper('https://cmpe272.herokuapp.com/fbconfig.php' );
 try {
